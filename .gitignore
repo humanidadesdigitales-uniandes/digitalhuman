@@ -86,3 +86,12 @@ typings/
 
 # dotenv environment variables file
 .env
+
+
+## Project
+
+notes.md
+secrets.md
+*.secret
+*.secrets
+lipsum.com
