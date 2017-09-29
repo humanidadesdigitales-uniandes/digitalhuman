@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+<div class="row">
+  <div class="columns small-12">
+
+    {{#post}}
+    <h2>{{title}}</h2>
+
+    {{content}}
+    {{/post}}
+  </div>
+</div>
+<div class="row small-up-2 medium-up-3">
+  {{#get "posts" limit="all" filter="tags:proyecto"}}
+    {{#foreach posts}}
+  <div class="column">
+    <div class="card">
+      <img src="{{img_url feature_image}}">
+      <div class="card-section">
+        <h4>{{title}}</h4>
+        <p>{{excerpt}}</p>
+      </div>
+    </div>
+  </div>
+  {{/foreach}}
+{{/get}}
+</div>

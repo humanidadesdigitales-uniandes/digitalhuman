@@ -1,0 +1,24 @@
+<header id="header" class="topbar-sticky-shrink-header">
+  <div class="row">
+
+    <div class="columns small-6 medium-3 align-middle brand-logo">
+      <img src="{{asset "img/Logosimbolo-uniandes_horizontal-noback-blanco.svg"}}" alt="" />
+    </div>
+    <div class="columns small-6 medium-9">
+      <h1>{{@blog.title}}</h1>
+    </div>
+
+  </div>
+</header>
+
+<div data-sticky-container>
+  <div data-sticky data-margin-top='0' data-top-anchor="header:bottom" data-btm-anchor="content:bottom">
+    <div class="top-bar topbar-sticky-shrink">
+      <div class="top-bar-title">
+      </div>
+      <div class="top-bar-left">
+        {{navigation}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,176 @@
+@import 'foundation';
+//@import 'linearicons_style.css';
+//@import 'foundation-sites/dist/foundation.min';
+@import 'motion-ui';
+@import 'settings';
+//@import 'fonts';
+//@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700|Roboto:400,500,700');
+@include motion-ui-transitions;
+@include foundation-everything(true);
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+header{
+  h1,h2,h3,h4,h5{
+    color: white;
+  }
+  .brand-logo{
+    border-right: 1px white solid;
+  }
+  img{
+    margin-top:0.8rem;
+    max-width: 200px;
+  }
+
+}
+
+.top-bar{
+  .top-bar-title{
+    img{
+      width: 200px
+    }
+    svg{
+      path{
+        fill:$hd-red;
+      }
+    }
+  }
+  .menu{
+    font-family: 'Raleway-Semibold';
+    li{
+      &:hover{
+        border-bottom: 2px solid $hd-red;
+      }
+    }
+  }
+}
+
+
+$topbar-sticky-shrink-padding: 2rem; // controls the un-stuck height of topbar
+$topbar-sticky-shrink-padding-stuck: 1rem; // controls the is stuck height of topbar
+$topbar-sticky-shrink-bg: white;
+
+
+.topbar-sticky-shrink {
+  padding:$topbar-sticky-shrink-padding;
+  transition: padding 0.25s ease;
+  background: $topbar-sticky-shrink-bg;
+
+  .menu {
+    background: $topbar-sticky-shrink-bg;
+  }
+}
+
+.is-stuck .topbar-sticky-shrink {
+  padding: $topbar-sticky-shrink-padding-stuck;
+  transition: padding 0.25s ease;
+}
+
+[data-sticky] {
+  width: 100%;
+}
+
+// for demo only
+.topbar-sticky-shrink-header {
+  padding: 1.8rem 0;
+  //background: url('http://placehold.it/2000x500&text=this is a header') center center no-repeat;
+  //background-size: cover;
+  background: $hd-red;
+}
+
+
+
+
+
+
+
+
+
+
+
+$subnav-hero-bg: $primary-color;
+$subnav-hero-link-padding: 0.9rem 1rem;
+$subnav-hero-font-size: 0.75rem;
+$subnav-hero-link-opacity: 0.15;
+$subnav-hero-height: 300px;
+$subnav-hero-transition: all 0.35s ease-in-out;
+
+.subnav-hero-section {
+  text-align: center;
+  background: $subnav-hero-bg;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $subnav-hero-height;
+
+  .subnav-hero-headline {
+    color: $white;
+  }
+  .subnav-brand{
+    float: right;
+    bottom:0;
+  }
+}
+
+.subnav-hero-subnav {
+  float: left;
+  position: absolute;
+  text-align: center;
+  //margin: 0 auto;
+  bottom: 0;
+  //width: 100%;
+
+  li {
+    float: none;
+    display: inline-block;
+
+    a {
+      padding: $subnav-hero-link-padding;
+      font-size: $subnav-hero-font-size;
+      color: $white;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: $subnav-hero-transition;
+
+      &.is-active {
+        background: rgba($white, $subnav-hero-link-opacity);
+      }
+
+      &:hover {
+        background: rgba($white, $subnav-hero-link-opacity);
+      }
+      img{
+        min-width: 200px;
+        color: white;
+      }
+    }
+  }
+}
+
+footer{
+  //border-top: solid 1px;
+  .footer-logo{
+    max-width: 150px;
+  }
+  .menu{
+    padding: 3rem 0;
+    li{
+      font-size:0.8rem;
+      a{
+        padding: .5rem .7rem;
+      }
+    }
+  }
+  .legal-info,
+  .contact-info{
+    list-style-type: none;
+    font-size: .7rem;
+    font-family: 'Raleway-Semibold'
+  }
+}

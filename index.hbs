@@ -1,0 +1,77 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+
+
+
+{{! The main content area on the homepage }}
+
+
+
+<div class="row content" id="content">
+
+<div class="row">
+  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  {{#get "posts" filter="tags:demo" }}
+
+  <div class="orbit-wrapper">
+
+    <div class="orbit-controls">
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    </div>
+
+    <ul class="orbit-container">
+      {{#foreach posts}}
+        {{#if @first }}
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="{{img_url feature_image}}" alt="Space">
+            <figcaption class="orbit-caption">{{ excerpt }}</figcaption>
+          </figure>
+        </li>
+        {{else}}
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="{{img_url feature_image}}" alt="Space">
+            <figcaption class="orbit-caption">{{ excerpt }}</figcaption>
+          </figure>
+        </li>
+        {{/if}}
+      {{/foreach}}
+    </ul>
+  </div>
+  <nav class="orbit-bullets">
+    {{#foreach posts}}
+    {{#if @first}}
+    <button data-slide="{{@index}}"><span class="is-active show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+    {{else}}
+    <button data-slide="{{@index}}"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+    {{/if}}
+    {{/foreach}}
+  </nav>
+  {{/get}}
+</div>
+</div>
+<h2>Proyectos</h2>
+
+<div class="row small-up-2 medium-up-3">
+  {{#get "posts" limit="all" filter="tags:proyecto+featured:true"}}
+    {{#foreach posts}}
+  <div class="column">
+    <div class="card">
+      <img src="{{img_url feature_image}}">
+      <div class="card-section">
+        <h4>{{title}}</h4>
+        <p>{{excerpt}}</p>
+      </div>
+    </div>
+  </div>
+  {{/foreach}}
+{{/get}}
+</div>
+
+</div>

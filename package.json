@@ -1,0 +1,55 @@
+{
+  "name": "digitalhuman",
+  "version": "0.0.1",
+  "description": "This is a [Ghost](http://ghost.org) theme using [H5BP](http://html5boilerplate.com/) and [gulp](http://gulpjs.com/).",
+  "main": "gulp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name":"decolector",
+    "email":"cmart@decolector.net"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.2.8",
+    "foundation-sites": "^6.4.1",
+    "motion-ui": "^1.2.3",
+    "tiny-lr": "0.0.5"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp": "^3.5.5",
+    "gulp-concat": "^2.1.7",
+    "gulp-exec": "^1.0.4",
+    "gulp-livereload": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^0.5.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "motion-ui": "./node_modules/motion-ui/dist/motion-ui.js",
+    "foundation": "./node_modules/foundation-sites/dist/js/foundation.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "foundation": {
+      "depends": [
+        "jquery",
+        "motion-ui"
+      ],
+      "exports": "foundation"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}

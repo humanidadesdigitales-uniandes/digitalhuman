@@ -1,0 +1,22 @@
+{
+  "name": "digitalhuman",
+  "version": "0.0.1",
+  "authors": [
+    "decolector <cmart@decolector.net>"
+  ],
+  "description": "My private template",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~3.0.0",
+    "modernizr": "~2.7.2",
+    "foundation-sites": "^6.4.1"
+  }
+}
